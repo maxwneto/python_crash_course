@@ -2,12 +2,17 @@ from person import person
 
 person1 = person('Max', "14/12/1980", 'male', 'black', 'maxforexample@gmail.com')
 
+# testing methods
 person1.sleep()
 person1.wakeup()
 person1.walk()
 person1.sit()
 person1.talk()
 person1.eat()
+
+print("\n")
+      
+print(person1.greet_person())
 
 print("\n")
 

@@ -1,4 +1,6 @@
 class person:
+
+    #methods
     def __init__(self, name, birth_date, gender, color, email):
         self.name = name
         self.birth_date = birth_date
@@ -30,3 +32,6 @@ class person:
     
     def talk(self):
         print("Talking")
+    
+    def greet_person(self):
+        return f"Hello, {self.name}!"
