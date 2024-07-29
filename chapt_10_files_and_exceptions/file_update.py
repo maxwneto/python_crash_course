@@ -1,7 +1,13 @@
-file_path = '/home/max/Documents/projetos/python_crash_course/chapt_10_files_and_exceptions/files/greetings.txt'
+import os
+
+current_dir = os.path.dirname(__file__)
+
+relative_path = os.path.join(current_dir, 'files', 'greetings.txt')
+
+absolute_path = os.path.abspath(relative_path)
 
 try:
-    with open(file_path, 'a') as file_object:
+    with open(absolute_path, 'a') as file_object:
         file_object.write("I'm studying algorithms and Python programing.\n")
         file_object.write("I'm becoming a software engineer.\n")
         file_object.write("I'm changing my life for better.\n")

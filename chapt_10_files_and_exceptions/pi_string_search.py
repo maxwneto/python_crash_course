@@ -1,7 +1,13 @@
-file_path = '/home/max/Documents/projetos/python_crash_course/chapt_10_files_and_exceptions/files/pi.txt'
+import os
+
+current_dir = os.path.dirname(__file__)
+
+relative_path = os.path.join(current_dir, 'files', 'pi.txt')
+
+absolute_path = os.path.abspath(relative_path)
 
 try:
-    with open(file_path) as file_object:
+    with open(absolute_path) as file_object:
         lines = file_object.readlines()
 
 except FileNotFoundError:

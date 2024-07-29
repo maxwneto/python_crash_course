@@ -1,10 +1,16 @@
 import json
 
-file_path = '/home/max/Documents/projetos/python_crash_course/chapt_10_files_and_exceptions/files/numbers.json'
+import os
+
+current_dir = os.path.dirname(__file__)
+
+relative_path = os.path.join(current_dir, 'files', 'hello.txt')
+
+absolute_path = os.path.abspath(relative_path)
 
 numbers = [2, 3, 5, 7, 11, 13]
 try:
-    with open(file_path, 'w') as file_object:
+    with open(absolute_path, 'w') as file_object:
          json.dump(numbers, file_object)
 
 except FileNotFoundError:
@@ -12,6 +18,6 @@ except FileNotFoundError:
 
 else:
     # reading values from  JSON file
-    with open(file_path, 'r') as file_object:
+    with open(absolute_path, 'r') as file_object:
         loaded_numbers = json.load(file_object)
         print(loaded_numbers)
