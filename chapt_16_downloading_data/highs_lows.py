@@ -1,5 +1,6 @@
 import csv
 import os
+from matplotlib import pyplot as plt
 
 # Get the current directory where high_lows.py is located
 current_dir = os.path.dirname(__file__)
@@ -19,4 +20,13 @@ with open(absolute_path, mode='r') as file_name:
         # Append the high temperature value to the highs list
         highs.append(int(row[1]))  # Assuming the temperature values are integers
               
-    print(highs)
+    
+fig = plt.figure(dpi=128, figsize=(10,6))
+plt.plot(highs, c='red')
+
+plt.title("Daily high temperatures, July 2014", fontsize=24)
+plt.xlabel('', fontsize=16)
+plt.ylabel("Temperature (F)", fontsize=16)
+plt.tick_params(axis='both', which='major', labelsize=16)
+
+plt.show()
